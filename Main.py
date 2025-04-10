@@ -12,28 +12,20 @@ class Submarino:
        self.__init__()
 
     def atribuirCoordenada (self, comando =''):
+        bussola = ['Norte', 'Leste', 'Sul', 'Oeste']
         self.clearCoordenada()
         for comando_atual in comando.upper():
             posicaoAtual = ""
            
             if(comando_atual != "M" and comando_atual != "U" and comando_atual !="D"):
                 posicaoAtual = comando_atual
-                if(self.direcao =="Norte" and posicaoAtual == "R"):
-                    self.direcao = "Leste"
-                elif(self.direcao == "Norte" and posicaoAtual == "L"):
-                    self.direcao = "Oeste"
-                elif(self.direcao == "Leste" and posicaoAtual == "R"):
-                    self.direcao = "Sul"
-                elif(self.direcao == "Leste" and posicaoAtual == "L"):
-                    self.direcao = "Norte"
-                elif(self.direcao == "Sul" and posicaoAtual == "R"):
-                    self.direcao = "Leste"
-                elif(self.direcao == "Sul" and posicaoAtual == "L"):
-                    self.direcao = "Oeste"
-                elif(self.direcao == "Oeste" and posicaoAtual == "R"):
-                    self.direcao = "Norte"
-                elif(self.direcao == "Oeste" and posicaoAtual == "L"):
-                    self.direcao = "Sul"
+                indice = bussola.index(self.direcao)
+
+                if posicaoAtual == "R":
+                    self.direcao = bussola[(indice + 1) % 4]
+                elif posicaoAtual == "L":
+                    self.direcao = bussola[(indice - 1) % 4]
+                
             elif(comando_atual == "M"):
                 if(self.direcao == "Norte"):
                     self.y +=1
