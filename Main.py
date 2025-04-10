@@ -8,25 +8,26 @@ class Submarino:
         self.x = 0
         self.y = 0
         self.z = 0
-        self.direcao = "Norte"
-    
+        self.bussola = ['Norte', 'Leste', 'Sul', 'Oeste']
+        self.direcao = self.bussola[0]
+        
     def clearCoordenada (self):
        self.__init__()
 
     def atribuirCoordenada (self, comando =''):
-        bussola = ['Norte', 'Leste', 'Sul', 'Oeste']
+        
         self.clearCoordenada()
         for comando_atual in comando.upper():
             posicaoAtual = ""
            
             if(comando_atual != "M" and comando_atual != "U" and comando_atual !="D"):
                 posicaoAtual = comando_atual
-                indice = bussola.index(self.direcao)
+                indice = self.bussola.index(self.direcao)
 
                 if posicaoAtual == "R":
-                    self.direcao = bussola[(indice + 1) % 4]
+                    self.direcao = self.bussola[(indice + 1) % 4]
                 elif posicaoAtual == "L":
-                    self.direcao = bussola[(indice - 1) % 4]
+                    self.direcao = self.bussola[(indice - 1) % 4]
                 
             elif(comando_atual == "M"):
                 if(self.direcao == "Norte"):
@@ -51,11 +52,9 @@ class SubmarinoTest(unittest. TestCase):
     def testCoordenada(self):
         sub = Submarino()
         self.assertEqual('2 3 -2 SUL', sub.atribuirCoordenada("RMMLMMMDDLL"))
-        sub = Submarino()
+        
         self.assertEqual('-1 2 0 NORTE', sub.atribuirCoordenada("LMRDDMMUU"))
-    
-    def testPosicaoInicial(self):
-        sub = Submarino()
+        
         self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
 
 if __name__ == '__main__':
