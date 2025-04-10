@@ -55,6 +55,10 @@ class SubmarinoTest(unittest. TestCase):
         
         self.assertEqual('-1 2 0 NORTE', sub.atribuirCoordenada("LMRDDMMUU"))
         
+        self.assertEqual('0 0 0 OESTE', sub.atribuirCoordenada("L"))
+        self.assertEqual('0 0 0 LESTE', sub.atribuirCoordenada("R"))
+        self.assertEqual('0 0 -1 NORTE', sub.atribuirCoordenada("D"))
+        self.assertEqual('0 0 1 NORTE', sub.atribuirCoordenada("U")) #Lembrando que 0 é a superficie do mar
         self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
 
 if __name__ == '__main__':
