@@ -1,46 +1,68 @@
-Viagem ao fundo do mar
-Uma equipe de cientista está explorando a Fossa das Marianas e para isso utiliza submarinos não tripulados.
+# 🐋 Viagem ao Fundo do Mar
 
-A Fossa das Marianas é o local mais profundo dos oceanos, atingindo uma profundidade de 11 034 metros. Localiza-se no oceano Pacífico, a leste das ilhas Marianas, na fronteira convergente entre as placas tectônicas do Pacífico e das Filipinas. (Wikipédia)
+Um sistema de navegação para submarinos não tripulados em exploração científica da Fossa das Marianas.
 
-Os cientistas já mapearam a área a ser explorada e a dividiram em três eixos: X, Y e Z.
+## 🌊 Sobre o Projeto
 
-Esses eixos controlam o posicionamento e profundidade do submarino.
+Este projeto simula a movimentação de submarinos autônomos enviados por uma equipe de cientistas para explorar a Fossa das Marianas, o ponto mais profundo dos oceanos.
 
-imagem com as dimensões
+A movimentação do submarino é controlada por comandos simples enviados em sequência. O sistema interpreta esses comandos e retorna a posição final e a direção do submarino.
 
-A posição do submarino é representado pela notação (0, 0, 0, NORTE) que indica os pontos X, Y, Z e a direção que o submarino aponta (Norte, Sul, Leste e Oeste).
+## 📍 Caso de Uso
 
-Os cientistas utilizam uma serie de comandos simples para fazer a movimentação do submarino:
+### Cenário
 
-L e R para girar o submarino para esquerda ou direita,
-M para mover o submarino e
-U e D para subir ou descer o submarino.
-Você deve desenvolver um sistema que processe uma série de comandos e faça a navegação desse submarino.
+A equipe científica está explorando a **Fossa das Marianas**, que atinge até **11.034 metros de profundidade** no oceano Pacífico. Para isso, são utilizados submarinos não tripulados que navegam em um ambiente 3D, com coordenadas nos eixos **X, Y e Z**.
 
-Para simplificar, leve em consideração que o submarino sempre começará no ponto (0, 0, 0, NORTE) e
+A posição do submarino é representada como:
 
-que todo movimento quando o submarino estiver apontando para o NORTE, somará 1 ao eixo Y,
+# 🐋 Viagem ao Fundo do Mar
 
-todo movimento quando o submarino estiver apontando para o LESTE somará 1 ao eixo X e
+Um sistema de navegação para submarinos não tripulados em exploração científica da Fossa das Marianas.
 
-todo movimento para baixo diminuirá 1 do eixo Z.
+## 🌊 Sobre o Projeto
 
-Ah, vale lembrar que 0 no eixo Z é a superfície do oceano
+Este projeto simula a movimentação de submarinos autônomos enviados por uma equipe de cientistas para explorar a Fossa das Marianas, o ponto mais profundo dos oceanos.
 
-Entrada:
-Os cientistas mandarão os comandos agrupados em uma única linha, como no exemplo:
+A movimentação do submarino é controlada por comandos simples enviados em sequência. O sistema interpreta esses comandos e retorna a posição final e a direção do submarino.
 
+## 📍 Caso de Uso
+
+### Cenário
+
+A equipe científica está explorando a **Fossa das Marianas**, que atinge até **11.034 metros de profundidade** no oceano Pacífico. Para isso, são utilizados submarinos não tripulados que navegam em um ambiente 3D, com coordenadas nos eixos **X, Y e Z**.
+
+A posição do submarino é representada como:
+
+Sendo:
+- `X`: posição horizontal (Leste-Oeste)
+- `Y`: posição vertical (Norte-Sul)
+- `Z`: profundidade (0 na superfície, valores negativos em profundidade)
+- `DIREÇÃO`: orientação atual do submarino (NORTE, SUL, LESTE, OESTE)
+
+
+
+A posição inicial do submarino é sempre:
+(0, 0, 0, NORTE)
+## ✅ Exemplo de Entrada e Saída
+
+### Exemplo 1:
+**Entrada:**  
 LMRDDMMUU
-Saída:
-A saída deverá conter a coordenada final do submarino junto com sua direção, como no exemplo:
 
+
+**Saída esperada:**  
 -1 2 0 NORTE
-Exemplo de execução:
-Dado a seguinte entrada:
 
+
+
+### Exemplo 2:
+**Entrada:**  
 RMMLMMMDDLL
-A saída esperada é:
 
+
+
+**Saída esperada:**  
 2 3 -2 SUL
-Lembrando que a posição inicial do submarino é 0, 0, 0, NORTE
+
+
