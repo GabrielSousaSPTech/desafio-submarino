@@ -38,7 +38,7 @@ class Submarino:
                     self.x +=1
                 elif(self.direcao == "Oeste"):
                     self.x -=1
-            elif(comando_atual == "U"):
+            elif(comando_atual == "U" and self.z < 0):
                 
                 self.z +=1
             elif(comando_atual == "D"):
@@ -58,7 +58,7 @@ class SubmarinoTest(unittest. TestCase):
         self.assertEqual('0 0 0 OESTE', sub.atribuirCoordenada("L"))
         self.assertEqual('0 0 0 LESTE', sub.atribuirCoordenada("R"))
         self.assertEqual('0 0 -1 NORTE', sub.atribuirCoordenada("D"))
-        self.assertEqual('0 0 1 NORTE', sub.atribuirCoordenada("U")) #Lembrando que 0 é a superficie do mar
+        self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada("U"))
         self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
 
 if __name__ == '__main__':
