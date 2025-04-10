@@ -51,15 +51,14 @@ class Submarino:
 class SubmarinoTest(unittest. TestCase):
     def testCoordenada(self):
         sub = Submarino()
-        self.assertEqual('2 3 -2 SUL', sub.atribuirCoordenada("RMMLMMMDDLL"))
-        
-        self.assertEqual('-1 2 0 NORTE', sub.atribuirCoordenada("LMRDDMMUU"))
-        
-        self.assertEqual('0 0 0 OESTE', sub.atribuirCoordenada("L"))
-        self.assertEqual('0 0 0 LESTE', sub.atribuirCoordenada("R"))
+        self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
         self.assertEqual('0 0 -1 NORTE', sub.atribuirCoordenada("D"))
         self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada("U"))
-        self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
+        self.assertEqual('0 0 0 OESTE', sub.atribuirCoordenada("L"))
+        self.assertEqual('0 0 0 LESTE', sub.atribuirCoordenada("R"))
+        self.assertEqual('2 3 -2 SUL', sub.atribuirCoordenada("RMMLMMMDDLL"))
+        self.assertEqual('-1 2 0 NORTE', sub.atribuirCoordenada("LMRDDMMUU"))
+    
 
 if __name__ == '__main__':
     unittest.main()
