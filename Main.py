@@ -1,3 +1,5 @@
+import unittest
+
 
 
 class Submarino:
@@ -41,12 +43,20 @@ class Submarino:
             elif(comando_atual == "D"):
                 
                 self.z -=1
-        return self.x, self.y, self.z, self.direcao.upper()      
+        return f"{self.x} {self.y} {self.z} {self.direcao.upper()}"
+    
         
 
-submarino = Submarino()
+class SubmarinoTest(unittest. TestCase):
+    def testCoordenada(self):
+        sub = Submarino()
+        self.assertEqual('2 3 -2 SUL', sub.atribuirCoordenada("RMMLMMMDDLL"))
+        sub = Submarino()
+        self.assertEqual('-1 2 0 NORTE', sub.atribuirCoordenada("LMRDDMMUU"))
+    
+    def testPosicaoInicial(self):
+        sub = Submarino()
+        self.assertEqual('0 0 0 NORTE', sub.atribuirCoordenada())
 
-print(submarino.atribuirCoordenada("LMRDDMMUU"))
-print(submarino.atribuirCoordenada("RMMLMMMDDLL"))
-print(submarino.atribuirCoordenada('L'))
-print(submarino.atribuirCoordenada())
+if __name__ == '__main__':
+    unittest.main()
